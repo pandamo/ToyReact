@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToyReact Demo</title>
+    <style>
+        div{border:1px solid currentColor;border-radius: 5px;padding: 10px;margin: 10px;}
+        .myComponent{color:#3F51B5}
+        .myComponent::before,
+        .antherComponent::before{
+            display: block;
+        }
+        .myComponent::before{
+            content: '我是 MyComponent 组件';
+        }
+        .antherComponent{color:#FF5722}
+        .antherComponent::before{
+            content: '我是 AntherComponent 组件';
+        }
+    </style>
+</head>
+<body>
+    <script src="dist/main.js"></script>
+</body>
+</html>

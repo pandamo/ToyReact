@@ -1,36 +1,36 @@
-import {ToyReact,Component} from './toyReact.js'
+import { ToyReact, Component } from './ToyReact.js'
 
 
-/* MyComponent组件 */
-class MyComponent extends Component{
- render(){
-     return <div class='myComponent'>
-     {this.children}
+class MyComponent extends Component {
+  render() {
+    return <div class='MyComponent'>
+      <h3>我是<em>MyComponent</em>组件</h3>
+      {this.children}
     </div>
- }
+  }
 }
-
-/* AntherComponent组件 */
-class AntherComponent extends Component{
-    render(){
-        return <div class='antherComponent'>
-            {this.children}
-        </div>
-    }
+class SubComponent extends Component {
+  render() {
+    return <div class='SubComponent'>
+      <h3>我是<em>SubComponent</em>组件</h3>
+      {this.children}
+    </div>
+  }
 }
-
-let WarrperComponent = <div>
-    <h2>我是WarrperComponent</h2>
-    <MyComponent>
-        {/* 组件嵌套 */}
-        <AntherComponent>
-            <span>我是 AntherComponent 的 children</span>
-        </AntherComponent>
+const WrapperComponent =
+  <div>
+    <h2>我叫WrapperComponent</h2>
+    {/* MyComponent组件 */}
+    <MyComponent id='a' name='a'>
+      {/* 组件嵌套 -- MyComponent组件 插入 SubComponent组件 */}    
+      <SubComponent><div class='SubComponent-children'>我是<em>SubComponent</em>的children</div></SubComponent>
     </MyComponent>
-    <AntherComponent></AntherComponent>
-</div>
+
+    {/* SubComponent组件 */}
+    <SubComponent></SubComponent>
+  </div>
 
 ToyReact.render(
-    WarrperComponent,
-    document.body
+  WrapperComponent,
+  document.body
 )

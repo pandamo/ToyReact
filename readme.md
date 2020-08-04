@@ -7,12 +7,12 @@
 
 预览文件：TicTacToe.html
 *已实现走棋和判断输赢
-![TicTacToe.html](https://s1.ax1x.com/2020/08/04/aBKJHO.png)
+<img src="https://s1.ax1x.com/2020/08/04/aBKJHO.png">
 
 ------------
 
 ### 第一天作业
 预览文件：main.html
 实现简单的createElement
-![main.html](https://s1.ax1x.com/2020/08/04/aBMnqf.png)
+<img src="https://s1.ax1x.com/2020/08/04/aBMnqf.png">
 

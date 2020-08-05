@@ -30,10 +30,14 @@ export class Component {
     //更新state
     const merge = (oldState, newState) => {
       for (let i in newState) {
-        if (typeof newState[i] === 'object') {
+        if (typeof newState[i] === 'object' && newState[i] !== null) {
           // 如果是对象，递归下去，最后赋值
-          if (typeof oldState[i] !== 'object') {
-            oldState[i] = null
+          if (typeof oldState[i] !== 'object' ) {
+            if(newState[i] instanceof Array){
+              oldState[i]=[]
+            }else{
+              oldState[i] = {}
+            }
           }
           merge(oldState[i], newState[i])
         } else {
@@ -112,6 +116,9 @@ export const ToyReact = {
         if (typeof child === 'object' && child instanceof Array) {
           insertChild(child)
         } else {
+          if(child === null && child === void 0){
+            child = ''
+          }
           if (!(child instanceof Component) &&
             !(child instanceof ElementWrapper) &&
             !(child instanceof TextWrapper)) {

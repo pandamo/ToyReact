@@ -1,8 +1,9 @@
 //const path = require('path');
 
 module.exports = {
-  //entry: './main.js', 
-  entry: './TicTacToe.js',
+  //entry: './main.js',  //第一天
+  //entry: './TicTacToe.js', //第二天 
+  entry: './TicTacToe-vdom.js', //第三天
   mode: 'development',
   optimization: {
     minimize: false
@@ -24,6 +25,6 @@ module.exports = {
   },
    output: {
       // path: path.resolve(__dirname, 'dist'),
-     filename: 'TicTacToe.js'
+     filename: 'TicTacToe-vdom.js'
    }
 };
